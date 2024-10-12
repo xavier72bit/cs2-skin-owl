@@ -1,14 +1,13 @@
 {
-  "name": "hello_owl",
-  "version": "0.1.0",
-  "description": "Demo app",
+  "name": "cs2-skin",
+  "version": "1.0",
+  "description": "A front-end for a CS2 item data website built using the OWL framework, as a practice for OWL.",
   "main": "src/index.html",
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --mode development"
   },
-  "author": "Someone",
-  "license": "ISC",
+  "author": "Xavier Wu",
   "devDependencies": {
     "babel-loader": "9.2.1",
     "html-webpack-plugin": "^5.6.0",
