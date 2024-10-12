@@ -18,6 +18,22 @@ module.exports = function (env, argv) {
                     test: /\.js?$/,
                     exclude: /node_modules/,
                 },
+                {
+                    test: /\.(sa|sc|c)ss$/i,
+                    /* DEV NOTE
+                    在进行css文件的打包时, 按照use Array中的顺序传递文件进行打包:
+                    1. style-loader: 将JS字符串生成为style节点, 主要是支持在js中导入css的行为
+                    2. css-loader: 将CSS转化成CommonJS模块
+                    3. postcss-loader: 进一步处理CSS, 比如添加浏览器前缀, 压缩CSS等
+                    4. sass-loader: 将Sass编译成CSS
+                    */
+                    use: [
+                      "style-loader",
+                      "css-loader",
+                      "postcss-loader",
+                      "sass-loader",
+                    ],
+                },
             ],
         },
         resolve: {

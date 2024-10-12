@@ -26,6 +26,11 @@ import { NavBar } from "./WebClient/NavBar";
 import { MainContent } from "./WebClient/MainContent";
 import { Footer } from "./WebClient/Footer";
 
+/* DEV NOTE:
+webpack支持css的打包后，即可直接导入css样式
+*/
+import "./WebClient.scss"
+
 
 // 这里我就用odoo官方的web应用中的命名结构了
 export class WebClient extends Component {
@@ -35,10 +40,12 @@ export class WebClient extends Component {
   */ 
   static template = xml`
     <t t-name="WebClient">
-      <Header/>
-      <NavBar/>
-      <MainContent/>
-      <Footer/>
+      <div class="web_client">
+        <Header/>
+        <NavBar/>
+        <MainContent/>
+        <Footer/>
+      </div>
     </t>
   `;
 

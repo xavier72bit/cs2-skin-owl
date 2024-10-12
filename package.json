@@ -12,7 +12,13 @@
     "html-webpack-plugin": "^5.6.0",
     "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^5.1.0"
+    "webpack-dev-server": "^5.1.0",
+    "css-loader": "^7.1.2",
+    "sass-loader": "^16.0.2",
+    "sass": "^1.79.5",
+    "style-loader": "^4.0.0",
+    "postcss-loader": "^8.1.1",
+    "postcss": "^8.4.47"
   },
   "dependencies": {
     "@odoo/owl": "^2.4.0"
