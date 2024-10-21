@@ -1,18 +1,23 @@
-import { useState, Component, xml } from "@odoo/owl";
+import { Component, xml } from "@odoo/owl";
+import { NavBarButton } from "./NavBar/NavBarButton";
+import { DefaultContent, TestContent } from "./MainContent";
 
+import "./NavBar.scss"
 
 export class NavBar extends Component {
   static template = xml`
-    <t t-name="WebClient.NavBar">
-      <div t-on-click="update">
-        This is a <t t-esc="state.showText"/>
-      </div>
-    </t>
+  <div class="wc_nav_bar">
+    <NavBarButton buttonName="'默认'" renderComponent="linkContentState.default"/>
+    <NavBarButton buttonName="'测试'" renderComponent="linkContentState.test"/>
+  </div>
   `;
 
-  state = useState({"showText": "NavBar"});
+  static components = {
+    NavBarButton,
+  }
 
-  update() {
-    this.state.showText = this.state.showText === "NavBar" ? "哈哈哈哈" : "NavBar";
+  linkContentState = {
+    'default': DefaultContent,
+    'test': TestContent
   }
 }

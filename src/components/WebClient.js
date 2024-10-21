@@ -1,29 +1,25 @@
-/* DEV NOTE:
-这里采用了HTML5语义化结构元素的组件命名方案
-
-    +---------+---------+---------+   <----+
-    |           <header>          |      Header
-    +---------+---------+---------+   <----+
-    |            <nav>            |      NavBar
-    +---------+---------+---------+   <----+
-    |     <article>     |         |        |
-    +---------+---------+         +        |
-    |     <article>     |         |        |
-    +---------+---------+ <aside> +   MainContent
-    |     <article>     |         |        |
-    +---------+---------+         +        |
-    |     <article>     |         |        |
-    +---------+---------+---------+   <----+
-    |           <footer>          |     Footer
-    +---------+---------+---------+   <----+
-
-*/
+/**
+ * WebClient的结构
+ * 
+ *  +-----------------------------+
+ *  |            NavBar           |
+ *  +-----------------------------+   <----+
+ *  |                             |        |
+ *  +                             +        |
+ *  |                             |        |
+ *  +           Content           +  MainContentContainer
+ *  |                             |        |
+ *  +                             +        |
+ *  |                             |        |
+ *  +-----------------------------+   <----+
+ *  |            Footer           |
+ *  +-----------------------------+
+ */
 
 
 import { Component, xml } from "@odoo/owl";
-import { Header } from "./WebClient/Header";
 import { NavBar } from "./WebClient/NavBar";
-import { MainContent } from "./WebClient/MainContent";
+import { MainContentContainer } from "./WebClient/MainContent";
 import { Footer } from "./WebClient/Footer";
 
 /* DEV NOTE:
@@ -32,7 +28,6 @@ webpack支持css的打包后，即可直接导入css样式
 import "./WebClient.scss"
 
 
-// 这里我就用odoo官方的web应用中的命名结构了
 export class WebClient extends Component {
   /* DEV NOTE:
   1. 组件在模板里就是这样定义的，一个单标签
@@ -41,21 +36,23 @@ export class WebClient extends Component {
   static template = xml`
     <t t-name="WebClient">
       <div class="web_client">
-        <Header/>
         <NavBar/>
-        <MainContent/>
+        <MainContentContainer/>
         <Footer/>
       </div>
     </t>
   `;
 
+  static props = {
+
+  }
+
   /* DEV NOTE:
   定义在模板里的组件引用，要写到components属性里
   */
   static components = {
-    Header,
     NavBar,
-    MainContent,
+    MainContentContainer,
     Footer
   };
 }
