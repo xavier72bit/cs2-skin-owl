@@ -4,8 +4,10 @@
 
 # repo standard
 
-实现功能类的提交，提交信息中要以：`"feat: "`开头，并且要在README.md中编写对应的development topic。
-问题修复类的提交，提交信息中要以：`"fix: "`开头，注意修订README.md中对应的development topic。
+* 实现功能类的提交，提交信息中要以：`"feat: "`开头，并且要在README.md中编写对应的development topic。
+* 问题修复类的提交，提交信息中要以：`"fix: "`开头，注意修订README.md中对应的development topic。
+* 编写、修订开发笔记注释类的提交，提交信息中要以：`"devnote: "`开头，注意，修复注释、README等等都走“问题修复类”的提交
+
 
 # development topic
 
