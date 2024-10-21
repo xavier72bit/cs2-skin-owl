@@ -1,22 +1,3 @@
-/**
- * WebClient的结构
- * 
- *  +-----------------------------+
- *  |            NavBar           |
- *  +-----------------------------+   <----+
- *  |                             |        |
- *  +                             +        |
- *  |                             |        |
- *  +           Content           +  MainContentContainer
- *  |                             |        |
- *  +                             +        |
- *  |                             |        |
- *  +-----------------------------+   <----+
- *  |            Footer           |
- *  +-----------------------------+
- */
-
-
 import { Component, xml } from "@odoo/owl";
 import { NavBar } from "./WebClient/NavBar";
 import { MainContentContainer } from "./WebClient/MainContent";
