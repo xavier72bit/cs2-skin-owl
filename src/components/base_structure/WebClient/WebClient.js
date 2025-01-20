@@ -1,7 +1,7 @@
 import { Component, xml } from "@odoo/owl";
-import { NavBar } from "./WebClient/NavBar";
-import { MainContentContainer } from "./WebClient/MainContent";
-import { Footer } from "./WebClient/Footer";
+import { NavBar } from "../NavBar/NavBar";
+import { MainContentContainer } from "../MainContent/MainContent";
+import { Footer } from "../Footer/Footer";
 
 /* DEV NOTE:
 webpack支持css的打包后，即可直接导入css样式

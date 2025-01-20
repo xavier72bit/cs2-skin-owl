@@ -1,6 +1,6 @@
 import { Component, xml } from "@odoo/owl";
-import { NavBarButton } from "./NavBar/NavBarButton";
-import { DefaultContent, TestContent } from "./MainContent";
+import { NavBarButton } from "../NavBarButton/NavBarButton";
+import { DefaultContent, TestContent } from "../MainContent/MainContent";
 
 import "./NavBar.scss"
 

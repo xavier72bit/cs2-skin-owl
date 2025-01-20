@@ -1,5 +1,5 @@
 import { Component, useState, xml } from "@odoo/owl";
-import { eventBus } from "../../eventBus";
+import { eventBus } from "../../../eventBus";
 
 import "./MainContent.scss"
 
