@@ -1,12 +1,8 @@
 import { Component, xml } from "@odoo/owl";
-import { NavBar } from "../NavBar/NavBar";
-import { MainContentContainer } from "../MainContent/MainContent";
-import { Footer } from "../Footer/Footer";
 
-/* DEV NOTE:
-webpack支持css的打包后，即可直接导入css样式
-*/
-import "./WebClient.scss"
+import { NavBar } from "./NavBar";
+import { MainContentContainer } from "./MainContentContainer";
+import { Footer } from "./Footer";
 
 
 export class WebClient extends Component {
@@ -23,10 +19,6 @@ export class WebClient extends Component {
       </div>
     </t>
   `;
-
-  static props = {
-
-  }
 
   /* DEV NOTE:
   定义在模板里的组件引用，要写到components属性里

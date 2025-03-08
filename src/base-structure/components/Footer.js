@@ -15,4 +15,4 @@ export class Footer extends Component {
   update() {
     this.state.showText = this.state.showText === "Footer" ? "哈哈哈哈" : "Footer";
   }
-}
+};

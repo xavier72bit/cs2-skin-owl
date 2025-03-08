@@ -1,0 +1,38 @@
+.web_client {
+    position: relative;
+}
+
+.wc_nav_bar {
+    height: 6vw;
+    background-color: purple;
+    display: flex;
+    align-items: center;
+}
+
+.wc_main_content_container {
+    height: 800px;
+    background-color: green;
+}
+
+.nav_bar_button_container {
+    height: 3.3333vw;
+    width: 10vw;
+    margin: 0 1.3333vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav_bar_button {
+    background-color: orange;
+    font-size: 2vw;
+    height: 2.6667vw;
+    line-height: 2.6667vw;
+    margin: auto 1vw;
+    box-sizing: content-box;
+}
+
+.nav_bar_button:hover {
+    color: #00f;
+    cursor: pointer;
+}

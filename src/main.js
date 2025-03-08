@@ -1,9 +1,3 @@
-/* DEV NOTE
-main.js负责将根组件包装成一个App类，并将App挂载到body标签上
-*/
+import { app } from "./app"
 
-import { App } from "@odoo/owl";
-import { WebClient } from "./components/base_structure/WebClient/WebClient";
-
-const app = new App(WebClient, {"name": "CS2 Skin WebClent"})
-app.mount(document.body)
+app.mount(document.body);

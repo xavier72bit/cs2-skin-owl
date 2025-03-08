@@ -1,7 +1,5 @@
 import { Component, useState, xml } from "@odoo/owl";
-import { eventBus } from "../../../eventBus";
-
-import "./MainContent.scss"
+import { eventBus } from "/src/common/eventBus";
 
 /**
  * MainContentContainer
@@ -14,10 +12,10 @@ export class MainContentContainer extends Component {
       <t t-component="contentState.contentComponent"/>
     </div>
   `;
-  
+
   // 响应式对象，当此对象中的值发生变化时，会触发重新渲染
   contentState = useState({
-    "contentComponent": DefaultContent,
+    "contentComponent": this.env.components.indexMainContent,
   });
 
   /* DEV NOTE:
@@ -30,7 +28,7 @@ export class MainContentContainer extends Component {
         console.log(event.detail)
       }
 
-    3. 关于如何触发Event并传递数据，请参考src/components/WebClient/NavBar/NavBarButton.js
+    3. 关于如何触发Event并传递数据，请参考/src/base-structure/components/NavBarButton.js
   */
 
   setup() {
@@ -40,33 +38,4 @@ export class MainContentContainer extends Component {
   updateContent(event) {
     this.contentState.contentComponent = event.detail.contentComponent;
   }
-}
-
-
-export class BaseContent extends Component {
-  static template = xml`
-    <div t-name="WebClient.MainContent" class="wc_mcc_base_content">
-      <div t-slot="wc_mcc_content_slot">
-        
-      </div>
-    </div>
-  `;
-}
-
-
-export class DefaultContent extends BaseContent {
-  static template = xml`
-    <div t-slot="wc_mcc_content_slot">
-      Default
-    </div>
-  `;
-}
-
-
-export class TestContent extends BaseContent {
-  static template = xml`
-    <div t-slot="wc_mcc_content_slot">
-      Test
-    </div>
-  `;
-}
+};

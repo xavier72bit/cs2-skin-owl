@@ -1,7 +1,5 @@
 import { xml, Component } from "@odoo/owl";
-import { eventBus } from "../../../eventBus";
-
-import "./NavBarButton.scss";
+import { eventBus } from "/src/common/eventBus";
 
 /**
  * NavBarButton是NavBar里的组件
@@ -11,7 +9,7 @@ import "./NavBarButton.scss";
  */
 export class NavBarButton extends Component {
   static template = xml`
-    <div t-name="NavBar.NavBarButton" class="nav_bar_button_container" t-on-click="click">
+    <div class="nav_bar_button"  t-on-click="click">
       <t t-esc="props.buttonName"/>
     </div>
   `;
@@ -24,6 +22,16 @@ export class NavBarButton extends Component {
   }
 
   click() {
-    eventBus.trigger("wc-mcc-update-content", {contentComponent: this.props.renderComponent})
+    eventBus.trigger("wc-mcc-update-content", {contentComponent: this.props.renderComponent});
   }
-}
+};
+
+export const navbarButtonService = {
+  buttons: [],
+  addButton(buttonName, renderComponent) {
+    this.buttons.push({
+      buttonName: buttonName,
+      renderComponent: renderComponent
+    });
+  }
+};
